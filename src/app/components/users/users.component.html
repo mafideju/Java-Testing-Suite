@@ -1,3 +1,5 @@
-<p>users works!</p>
-<span>Nome: {{ name }} {{ lastName }}</span><br>
-<span>Idade: {{ age }}</span>
+<ul *ngFor="let user of users">
+  <p>users works!</p>
+  <span>Nome: {{ user.name }} {{ user.lastName }}</span><br>
+  <span>Idade: {{ user.age }}</span>
+</ul>
