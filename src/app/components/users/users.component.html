@@ -1,5 +1,5 @@
 <ul *ngFor="let user of users">
-  <div *ngIf="users.length > 0"> 
+  <div *ngIf="users.length > 0">
     <li>Nome: <span class="data">{{ user.name }} {{ user.lastName }}</span></li>
       <div *ngIf="showExtended">
         <li>Idade: <span class="data">{{ user.age }} anos</span></li>
@@ -9,5 +9,5 @@
   </div>
 </ul>
 
-<h3 *ngIf="users.length === 0">Nenhum Usuario Encontrado =\</h3>
+<h3 *ngIf="users.length === 0">Nenhum Usuário Encontrado =\</h3>
 

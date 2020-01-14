@@ -1,10 +1,10 @@
 export interface User {
-  name: string,
-  lastName: string,
-  age: number,
-  active: boolean,
+  name: string;
+  lastName: string;
+  age: number;
+  active: boolean;
   contact: {
-    email: string,
-    phone: string
- }
+    email: string;
+    phone: string;
+ };
 }
