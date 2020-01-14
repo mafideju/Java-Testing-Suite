@@ -1,4 +1,13 @@
 <ul *ngFor="let user of users">
-  <li>Nome: <span class="data">{{ user.name }} {{ user.lastName }}</span></li>
-  <li>Idade: <span class="data">{{ user.age }} anos</span></li>
+  <div *ngIf="users.length > 0"> 
+    <li>Nome: <span class="data">{{ user.name }} {{ user.lastName }}</span></li>
+      <div *ngIf="showExtended">
+        <li>Idade: <span class="data">{{ user.age }} anos</span></li>
+        <li>Email: <span class="data">{{ user.contact.email }}</span></li>
+        <li>Fone: <span class="data">{{ user.contact.phone }}</span></li>
+      </div>
+  </div>
 </ul>
+
+<h3 *ngIf="users.length === 0">Nenhum Usuario Encontrado =\</h3>
+

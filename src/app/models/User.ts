@@ -3,4 +3,8 @@ export interface User {
   lastName: string,
   age: number,
   active: boolean,
+  contact: {
+    email: string,
+    phone: string
+ }
 }
