@@ -27,29 +27,29 @@ export class UsersComponent implements OnInit {
           email: 'mafideju@outlook.com',
           phone: '954984696'
         },
-        image: 'http://lorempixel.com/600/600/people/3'
+        image: 'http://lorempixel.com/600/600/people/5'
       },
       {
         name: 'Silva',
         lastName: 'Junior',
         age: 48,
-        active: true,
+        active: false,
         contact: {
           email: 'silva-junior@outlook.com',
           phone: '654987512'
         },
-        image: 'http://lorempixel.com/600/600/people/2'
+        image: 'http://lorempixel.com/600/600/people/3'
       },
       {
         name: 'Marina',
         lastName: 'Ferrari',
         age: 38,
-        active: true,
+        active: false,
         contact: {
           email: 'ferrari-marina@outlook.com',
           phone: '987654321'
         },
-        image: 'http://lorempixel.com/600/600/people/1'
+        image: 'http://lorempixel.com/600/600/people/6'
       }
     ];
 
@@ -57,12 +57,12 @@ export class UsersComponent implements OnInit {
       name: 'Guilherme',
       lastName: 'Arantes',
       age: 60,
-      active: true,
+      active: false,
       contact: {
         email: 'arantes@guilherme.com',
         phone: '987654321'
       },
-      image: 'http://lorempixel.com/600/600/people/4'
+      image: 'http://lorempixel.com/600/600/people/8'
     });
     // this.enableAdd();
   }

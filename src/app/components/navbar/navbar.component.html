@@ -5,9 +5,9 @@
         <span href="#" class="navbar-brand">Angular 102</span>
       </div>
     </div>
-    <div class="col-sm-4 navbar__date">{{ today | date:'medium' }}</div>
+    <div class="col-sm-4 navbar__date">{{ today | date:'full' }}</div>
     <div class="col-sm-4 flex-end">
-      <button class="btn btn-outline-light mb-3" [disabled]="!enableAdd">
+      <button class="btn btn-outline-light mb-3" [disabled]="!enableAdd" (click)="enableAdd === false">
         Novo Integrante
       </button>
     </div>

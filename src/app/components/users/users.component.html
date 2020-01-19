@@ -1,5 +1,6 @@
-<ul *ngFor="let user of users" class="card card-body list-unstyled">
-  <div *ngIf="users.length > 0">
+<ul *ngFor="let user of users" class="card card-body list-unstyled p-1">
+  <div *ngIf="users.length > 0" [class.bg-light]="user.active" [style.border]="user.active ? '3px solid blue' : ''"
+    class="p-3">
     <div class="row col-sm-12">
       <div class="col-sm-3">
         <img [src]="user.image" alt="user.name" class="user__image">
