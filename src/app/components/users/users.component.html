@@ -1,13 +1,20 @@
-<ul *ngFor="let user of users">
+<ul *ngFor="let user of users" class="card card-body list-unstyled">
   <div *ngIf="users.length > 0">
-    <li>Nome: <span class="data">{{ user.name }} {{ user.lastName }}</span></li>
-      <div *ngIf="showExtended">
-        <li>Idade: <span class="data">{{ user.age }} anos</span></li>
-        <li>Email: <span class="data">{{ user.contact.email }}</span></li>
-        <li>Fone: <span class="data">{{ user.contact.phone }}</span></li>
+    <div class="row col-sm-12">
+      <div class="col-sm-3">
+        <img [src]="user.image" alt="user.name" class="user__image">
       </div>
+      <div class="col-sm-9">
+        <h4 class="pl-3">{{ user.name }} {{ user.lastName }}</h4>
+        <div *ngIf="showExtended" class="list-group mt-3">
+          <li class="list-group-item">Idade: {{ user.age }} anos</li>
+          <li class="list-group-item">Email: {{ user.contact.email }} </li>
+          <li class="list-group-item">Fone: {{ user.contact.phone }} </li>
+        </div>
+      </div>
+    </div>
+
   </div>
 </ul>
 
 <h3 *ngIf="users.length === 0">Nenhum Usuário Encontrado =\</h3>
-

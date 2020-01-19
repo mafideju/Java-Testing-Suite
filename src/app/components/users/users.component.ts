@@ -22,31 +22,34 @@ export class UsersComponent implements OnInit {
         name: 'Marcio',
         lastName: 'Rodrigues',
         age: 36,
-	active: true,
-	contact: {
-		email: 'mafideju@outlook.com',
-		phone: '954984696'
-	}
+        active: true,
+        contact: {
+          email: 'mafideju@outlook.com',
+          phone: '954984696'
+        },
+        image: 'http://lorempixel.com/600/600/people/3'
       },
       {
         name: 'Silva',
         lastName: 'Junior',
         age: 48,
-	active: true,
-	contact: {
-		email: 'silva-junior@outlook.com',
-		phone: '654987512'
-	} 
+        active: true,
+        contact: {
+          email: 'silva-junior@outlook.com',
+          phone: '654987512'
+        },
+        image: 'http://lorempixel.com/600/600/people/2'
       },
       {
         name: 'Marina',
         lastName: 'Ferrari',
         age: 38,
-	active: true,
-	contact: {
-		email: 'ferrari-marina@outlook.com',
-		phone: '987654321'
-	}
+        active: true,
+        contact: {
+          email: 'ferrari-marina@outlook.com',
+          phone: '987654321'
+        },
+        image: 'http://lorempixel.com/600/600/people/1'
       }
     ];
 
@@ -56,14 +59,21 @@ export class UsersComponent implements OnInit {
       age: 60,
       active: true,
       contact: {
-	email: 'arantes@guilherme.com',
-	phone: '987654321'
-      }  
+        email: 'arantes@guilherme.com',
+        phone: '987654321'
+      },
+      image: 'http://lorempixel.com/600/600/people/4'
     });
+    // this.enableAdd();
   }
-  
+
   addUser(user: User) {
     this.users.push(user)
   }
+
+  // enableAdd() {
+  //   console.log(this.enableAdd)
+  //   // this.enableAdd = !this.enableAdd;
+  // }
 
 }
