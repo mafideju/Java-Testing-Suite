@@ -8,5 +8,5 @@ export interface User {
     phone?: string;
   };
   image?: string;
-  hide?: true;
+  hide?: boolean;
 }

@@ -10,7 +10,14 @@
         <img [src]="user.image" alt="user.name" class="user__image">
       </div>
       <div class="col-sm-9">
-        <h4 class="pl-3">{{ user.name }} {{ user.lastName }}</h4>
+        <div class="row">
+          <h4 class="pl-3">{{ user.name }} {{ user.lastName }}</h4>
+          <small>
+            <button class="btn btn-small btn-outline-primary" (click)="showUserInfo(user)">
+              {{ user.hide ? '+' : '-' }}
+            </button>
+          </small>
+        </div>
         <div *ngIf="!user.hide" class="list-group mt-3">
           <li class="list-group-item">Idade: {{ user.age }} anos</li>
           <li class="list-group-item">Email: {{ user.contact.email }} </li>

@@ -70,4 +70,8 @@ export class UsersComponent implements OnInit {
       hide: true
     });
   }
+
+  showUserInfo(user: User) {
+    user.hide = !user.hide;
+  }
 }
