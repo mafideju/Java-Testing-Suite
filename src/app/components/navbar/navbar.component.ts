@@ -9,7 +9,7 @@ import { User } from 'src/app/models/User';
 export class NavbarComponent implements OnInit {
   enableAdd = true;
   today: number = Date.now();
-  users: any;
+  users: Array<User>[];
 
   constructor() { }
 

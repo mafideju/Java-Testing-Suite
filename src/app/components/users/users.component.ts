@@ -22,12 +22,13 @@ export class UsersComponent implements OnInit {
         name: 'Marcio',
         lastName: 'Rodrigues',
         age: 36,
-        active: true,
+        active: false,
         contact: {
           email: 'mafideju@outlook.com',
           phone: '954984696'
         },
-        image: 'http://lorempixel.com/600/600/people/5'
+        image: 'http://lorempixel.com/600/600/people/5',
+        hide: true
       },
       {
         name: 'Silva',
@@ -38,7 +39,8 @@ export class UsersComponent implements OnInit {
           email: 'silva-junior@outlook.com',
           phone: '654987512'
         },
-        image: 'http://lorempixel.com/600/600/people/3'
+        image: 'http://lorempixel.com/600/600/people/3',
+        hide: true
       },
       {
         name: 'Marina',
@@ -49,8 +51,23 @@ export class UsersComponent implements OnInit {
           email: 'ferrari-marina@outlook.com',
           phone: '987654321'
         },
-        image: 'http://lorempixel.com/600/600/people/6'
+        image: 'http://lorempixel.com/600/600/people/6',
+        hide: true
       }
     ];
+  }
+  addUser(user: User) {
+    this.users.unshift({
+      name: 'Ariel',
+      lastName: 'Chauca',
+      age: 26,
+      active: true,
+      contact: {
+        email: 'andinas@outlook.com',
+        phone: '987654321'
+      },
+      image: 'http://lorempixel.com/600/600/people/8',
+      hide: true
+    });
   }
 }

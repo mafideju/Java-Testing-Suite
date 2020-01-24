@@ -1,3 +1,7 @@
+<button class="btn btn-block btn-outline-primary mb-3" (click)="addUser(user)">
+  Novo Integrante
+</button>
+
 <ul *ngFor="let user of users" class="card card-body list-unstyled p-1">
   <div *ngIf="users.length > 0" [class.bg-light]="user.active" [style.border]="user.active ? '3px solid blue' : ''"
     class="p-3">
@@ -7,14 +11,13 @@
       </div>
       <div class="col-sm-9">
         <h4 class="pl-3">{{ user.name }} {{ user.lastName }}</h4>
-        <div *ngIf="showExtended" class="list-group mt-3">
+        <div *ngIf="!user.hide" class="list-group mt-3">
           <li class="list-group-item">Idade: {{ user.age }} anos</li>
           <li class="list-group-item">Email: {{ user.contact.email }} </li>
           <li class="list-group-item">Fone: {{ user.contact.phone }} </li>
         </div>
       </div>
     </div>
-
   </div>
 </ul>
 
