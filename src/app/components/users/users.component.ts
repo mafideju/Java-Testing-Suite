@@ -9,14 +9,14 @@ import { User } from 'src/app/models/User';
 
 export class UsersComponent implements OnInit {
   users: User[];
-  showExtended: boolean = true;
+  showExtended = true;
 
   constructor() {
-    console.log('constructor')
+    console.log('constructor');
   }
 
   ngOnInit() {
-    console.log('ngOnInit')
+    console.log('ngOnInit');
     this.users = [
       {
         name: 'Marcio',
@@ -52,28 +52,5 @@ export class UsersComponent implements OnInit {
         image: 'http://lorempixel.com/600/600/people/6'
       }
     ];
-
-    this.addUser({
-      name: 'Guilherme',
-      lastName: 'Arantes',
-      age: 60,
-      active: false,
-      contact: {
-        email: 'arantes@guilherme.com',
-        phone: '987654321'
-      },
-      image: 'http://lorempixel.com/600/600/people/8'
-    });
-    // this.enableAdd();
   }
-
-  addUser(user: User) {
-    this.users.push(user)
-  }
-
-  // enableAdd() {
-  //   console.log(this.enableAdd)
-  //   // this.enableAdd = !this.enableAdd;
-  // }
-
 }
