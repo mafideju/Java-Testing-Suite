@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { User } from 'src/app/models/User';
 
 @Component({
@@ -8,70 +8,51 @@ import { User } from 'src/app/models/User';
 })
 
 export class UsersComponent implements OnInit {
+  user: User = {
+    name: '',
+    lastName: '',
+    age: null,
+    mainLanguage: '',
+    active: false,
+    contact: {
+      email: '',
+      phone: '',
+    },
+    image: `http://lorempixel.com/600/600/people/${Math.floor(Math.random() * 10 + 1)}`,
+    hide: true,
+    joinedAt: new Date()
+  }
   users: User[];
-  showExtended = true;
+  showExtended: boolean = true;
+  showUserForm: boolean = false;
+
+  // @ViewChild('userForm') form: any;
 
   constructor() {
-    console.log('constructor');
+    this.users = [];
   }
 
-  ngOnInit() {
-    console.log('ngOnInit');
-    this.users = [
-      {
-        name: 'Marcio',
-        lastName: 'Rodrigues',
-        age: 36,
-        active: false,
-        contact: {
-          email: 'mafideju@outlook.com',
-          phone: '954984696'
-        },
-        image: 'http://lorempixel.com/600/600/people/5',
-        hide: true
-      },
-      {
-        name: 'Silva',
-        lastName: 'Junior',
-        age: 48,
-        active: false,
-        contact: {
-          email: 'silva-junior@outlook.com',
-          phone: '654987512'
-        },
-        image: 'http://lorempixel.com/600/600/people/3',
-        hide: true
-      },
-      {
-        name: 'Marina',
-        lastName: 'Ferrari',
-        age: 38,
-        active: false,
-        contact: {
-          email: 'ferrari-marina@outlook.com',
-          phone: '987654321'
-        },
-        image: 'http://lorempixel.com/600/600/people/6',
-        hide: true
-      }
-    ];
-  }
-  addUser(user: User) {
-    this.users.unshift({
-      name: 'Ariel',
-      lastName: 'Chauca',
-      age: 26,
-      active: true,
-      contact: {
-        email: 'andinas@outlook.com',
-        phone: '987654321'
-      },
-      image: 'http://lorempixel.com/600/600/people/8',
-      hide: true
-    });
-  }
+  ngOnInit() { }
 
   showUserInfo(user: User) {
     user.hide = !user.hide;
+  }
+
+  onSubmit() {
+    this.users.unshift(this.user);
+    this.user.joinedAt = new Date();
+
+    setTimeout(() => {
+      this.user = {
+        name: '',
+        lastName: '',
+        age: null,
+        mainLanguage: '',
+        contact: {
+          email: '',
+          phone: '',
+        },
+      }
+    }, 666);
   }
 }

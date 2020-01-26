@@ -2,6 +2,7 @@ export interface User {
   name: string;
   lastName: string;
   age: number;
+  mainLanguage: string;
   active?: boolean;
   contact?: {
     email?: string;
@@ -9,4 +10,5 @@ export interface User {
   };
   image?: string;
   hide?: boolean;
+  joinedAt?: Date;
 }
