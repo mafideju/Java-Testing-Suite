@@ -1,0 +1,25 @@
+<div class="row">
+  <button class="btn btn-block btn-outline-dark col-sm-11 mb-3" (click)="getRecords()">Buscar Usuários</button>
+  <button class="btn btn-block btn-outline-dark col-sm-1 mb-3" (click)="showInfo()">Mais</button>
+</div>
+
+<div class="row" style="display: flex; justify-content: space-around;">
+  <div class="card text-white bg-dark mb-3 col-md-5" *ngFor="let record of records">
+    <div class="row">
+      <div class="col-xs-6">
+        <div class="card-header">{{ record.name }}</div>
+      </div>
+      <div class="col-xs-6">
+        <button (click)="moreInfo(record.id)">Mais</button>
+      </div>
+    </div>
+    <div class="card-body" *ngIf="hide">
+      <h5 class="card-title">{{ record.username }}</h5>
+      <p class="card-text">{{ record.email | lowercase }}</p>
+      <p class="card-text"><b>Fone: </b>{{ record.phone }}</p>
+      <p class="card-text"><b>Site: </b>{{ record.website }}</p>
+      <p class="card-text"><b>Cia.: </b>{{ record.company.name }}</p>
+      <p class="card-text"><b>City: </b>{{ record.address.city }}</p>
+    </div>
+  </div>
+</div>

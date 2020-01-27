@@ -7,9 +7,11 @@
     </div>
     <div class="col-sm-4 navbar__date">{{ today | date:'full' }}</div>
     <div class="col-sm-4 flex-end">
-      <button class="btn btn-outline-light mb-3" [disabled]="!enableAdd" (click)="addUser(user)">
-        Novo Integrante
-      </button>
+      <a [routerLink]="['/']" routerLinkActive="router-link-active">
+        <button class="btn btn-light mb-3">
+          Home
+        </button>
+      </a>
     </div>
   </div>
 </div>
