@@ -1,0 +1,15 @@
+<div class="card card-body">
+  <form>
+    <div class="form-group">
+      <input
+        type="text"
+        class="form-control"
+        placeholder="Adicional Texto"
+        name="text"
+        [(ngModel)]="text"
+      >
+    </div>
+    <input type="submit" value="Adicionar" class="btn btn-outline-danger" [disabled]="!this.text">
+    <button type="button" class="btn btn-outline-warning" [hidden]="!this.text" >Limpar</button>
+  </form>
+</div>

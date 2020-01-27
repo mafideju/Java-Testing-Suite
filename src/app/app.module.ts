@@ -4,25 +4,18 @@ import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { PostsComponent } from './components/posts/posts.component';
-import { UsersComponent } from './components/users/users.component';
-import { UserComponent } from './components/user/user.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
-import { DataService } from './services/data.service';
-import { PostService } from './services/post.service';
-import { RecordsComponent } from './components/records/records.component';
-import { RecordService } from './services/record.service';
-import { HomeComponent } from './components/home/home.component';
+import { LogsComponent } from './components/logs/logs.component';
+import { LogFormComponent } from './components/log-form/log-form.component';
+import { LogService } from './services/log.service';
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    PostsComponent,
-    UsersComponent,
-    UserComponent,
     NavbarComponent,
-    RecordsComponent,
-    HomeComponent
+    LogsComponent,
+    LogFormComponent,
   ],
   imports: [
     BrowserModule,
@@ -30,7 +23,7 @@ import { HomeComponent } from './components/home/home.component';
     FormsModule,
     HttpClientModule
   ],
-  providers: [DataService, PostService, RecordService],
+  providers: [LogService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
