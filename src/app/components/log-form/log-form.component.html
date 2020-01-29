@@ -10,6 +10,6 @@
       >
     </div>
     <input type="submit" value="Adicionar" class="btn btn-outline-danger" [disabled]="!this.text">
-    <button type="button" class="btn btn-outline-warning" [hidden]="!this.text" >Limpar</button>
+    <button type="button" (click)="clearState()" class="btn btn-outline-warning" [hidden]="!this.text" >Limpar</button>
   </form>
 </div>

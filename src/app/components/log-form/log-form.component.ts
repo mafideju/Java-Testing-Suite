@@ -30,20 +30,26 @@ export class LogFormComponent implements OnInit {
   }
 
   onSubmit() {
-    if (this.isNew) {
-      const newLog = {
-        id: uuid(),
-        text: this.text,
-        date: new Date()
-      };
-      this.logService.setNewLog(newLog);
-    } else {
-      const updatedLog = {
-        id: this.id,
-        text: this.text,
-        date: new Date()
-      };
-      this.logService.updatedLog(updatedLog);
-    }
+    const newLog = {
+      id: uuid(),
+      text: this.text,
+      date: new Date()
+    };
+    const updatedLog = {
+      id: this.id,
+      text: this.text,
+      date: new Date()
+    };
+
+    this.isNew ? this.logService.setNewLog(newLog) : this.logService.updatedLog(updatedLog);
+    this.clearState();
+  }
+
+  clearState() {
+    this.isNew = true;
+    this.id = '';
+    this.text = '';
+    this.date = '';
+    this.logService.clearStateService();
   }
 }

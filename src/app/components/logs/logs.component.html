@@ -1,7 +1,24 @@
-<ul class="list-group" *ngFor="let log of logs">
-  <li class="list-group-item d-flex justify-content-between align-items-center">
-    <a (click)="onSelect(log)" href="#">{{ log.text }}</a>
-    <span class="log-date">{{ log.date | date }}</span>
-    <span class="out-button" (click)="onDelete(log)">OUT</span>
-  </li>
-</ul>
+<div *ngIf="loaded && logs?.length > 0">
+  <ul class="list-group mt-3" *ngFor="let log of logs">
+    <li [class.list-group-item-info]="selectedLog === log" (click)="onSelect(log)" class="list-group-item d-flex justify-content-between align-items-center">
+      <a href="#">{{ log.text }}</a>
+      <span class="log-date">{{ log.date | date }}</span>
+      <span class="out-button" (click)="onDelete(log)">OUT</span>
+    </li>
+  </ul>
+</div>
+
+<div class="card mt-3" *ngIf="loaded && logs.length == 0">
+  <div class="card-header">
+    Crud & Lista Informam:
+  </div>
+  <div class="card-body">
+    <h5 class="card-title">Não há registros no sistema</h5>
+    <p class="card-text">Você pode adicionar o primeiro registro no campo acima!!!</p>
+    <!-- <a href="#" class="btn btn-primary">Go somewhere</a> -->
+  </div>
+</div>
+
+<div *ngIf="!loaded">
+  <h4>Tava sem Spinner na hora, mas imagina um...</h4>
+</div>
