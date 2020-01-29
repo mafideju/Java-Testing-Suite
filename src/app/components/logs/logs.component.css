@@ -1,0 +1,12 @@
+.out-button {
+  cursor: pointer;
+  width: 50px;
+  height: 25px;
+  padding: 5px;
+}
+
+.out-button:hover {
+  background-color: black;
+  border-radius: 5px;
+  color: white;
+}

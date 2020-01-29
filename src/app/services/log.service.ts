@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, Observable, of } from 'rxjs';
+import { BehaviorSubject, Observable, of, combineLatest } from 'rxjs';
 import { Logs } from '../models/Logs';
 
 @Injectable({
@@ -7,7 +7,6 @@ import { Logs } from '../models/Logs';
 })
 export class LogService {
   logs: Logs[];
-
 
   private logSource = new BehaviorSubject<Logs>({
     id: null,
@@ -17,30 +16,37 @@ export class LogService {
   selectedLog = this.logSource.asObservable();
 
   constructor() {
-    this.logs = [
-      {
-        id: '1',
-        text: 'Componente Dois',
-        date: new Date()
-      },
-      {
-        id: '2',
-        text: 'Componente Terceiro',
-        date: new Date()
-      },
-      {
-        id: '3',
-        text: 'Quarto Componente',
-        date: new Date()
-      },
-    ];
+    this.logs = [];
   }
 
-  getLogs() {
-    return this.logs;
+  getLogs(): Observable<Logs[]> {
+    return of(this.logs);
   }
 
   setFormLog(logs: Logs) {
     this.logSource.next(logs);
+  }
+
+  setNewLog(logs: Logs) {
+    this.logs.unshift(logs);
+  }
+
+  updatedLog(logs: Logs) {
+    this.logs.forEach((el, i) => {
+      if (logs.id === el.id) {
+        this.logs.splice(i, 1);
+      }
+    });
+    this.logs.unshift(logs);
+  }
+
+  deleteLog(log: Logs) {
+    console.log(log);
+
+    this.logs.forEach((el, i) => {
+      if (log.id === el.id) {
+        this.logs.splice(i, 1);
+      }
+    });
   }
 }
