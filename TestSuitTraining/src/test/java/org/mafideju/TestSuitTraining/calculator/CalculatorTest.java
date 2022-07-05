@@ -3,6 +3,8 @@ package org.mafideju.TestSuitTraining.calculator;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
+import java.util.concurrent.atomic.AtomicInteger;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 
@@ -17,14 +19,20 @@ public class CalculatorTest {
 
   @Test
   void integerSum() {
-    int calc = calculator.integerSum(3, 2);
-    assertEquals(5, calc);
+    int expected = 5;
+    int unexpected = 6;
+    int actual = calculator.integerSum(3, 2);
+
+    assertEquals(expected, actual);
+    assertNotEquals(unexpected, actual);
+    assertNotNull(actual);
   }
 
   @Test
   void integerSubtraction() {
-    int calc = calculator.integerSubtraction(10, 5);
-    assertEquals(5, calc);
+    int expected = 5;
+    int actual = calculator.integerSubtraction(10, 5);
+    assertEquals(expected, actual);
   }
 
   @Test
@@ -47,8 +55,12 @@ public class CalculatorTest {
 
   @Test
   void throwExceptionWhenDividesByZero() {
+    AtomicInteger divisionByZero = new AtomicInteger();
+
     assertThrows(ArithmeticException.class, () -> {
-      int divisionByZero = calculator.integerDivision(5, 0);
+      divisionByZero.set(calculator.integerDivision(5, 0));
     });
+
+    assertEquals(divisionByZero.get(), 0);
   }
 }
